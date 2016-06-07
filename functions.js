@@ -220,17 +220,21 @@ function isOdd(number){
  * @param {number} total maximum possible score
  * @return {string} the score represented as a letter grade
  */
-function letterGrade(number){
-    if(number>89){
-        return "A";
-    }else if(number>80&&number<89){
-        return "B";
-    }else if(number>70&&number<79){
-        return "C";
-    }else if(number>60&&number<69){
-        return "D";
-    }else if(number>0&&number<59){
+function letterGrade(num,total){
+    var number = (num/total)*100;
+    //alert(number);
+    if(number<60){
         return "F";
+    }else if(number<70){
+        return "D";
+    }else if(number<80){
+        return "C";
+    }
+    else if(number<90){
+        return "B";
+    }
+    else {
+        return "A";
     }
 }
 
@@ -246,7 +250,7 @@ function incrementReviews(restaurant){
     if(restaurant.reviews===undefined){
         restaurant.reviews = 1;
     }else{
-        restaurant.reviews = restaurant.reviews+1;
+        restaurant.reviews = restaurant.reviews + 1;
     }
     return restaurant;
 }
@@ -269,7 +273,9 @@ function combine(word1,word2){
  * @return {object} circle
  */
  
-function createCircle(number){
-        var circle = number*Math.PI;
+function createCircle(radius){
+        var circle = {};        
+        circle.area = radius*radius*Math.PI;
+        circle.circumference = (2*radius)*Math.PI;
         return circle;
     }
