@@ -4,6 +4,9 @@
  * @return {string} the number as a string
  */
 
+function numberToString(number){
+    return number.toString();
+}
 
 /**
  * Adds one to a given number.
@@ -11,12 +14,22 @@
  * @return {number}
  */
 
+function increase (number){
+    number += 1;
+    return number;
+}
+
 
 /**
  * Subtracts one from a given number.
  * @param {number} n
  * @return {number}
  */
+
+ function decrease (number){
+    number -= 1;
+    return number;
+}
 
 
 /**
@@ -26,6 +39,9 @@
  * @return {number} the sum
  */
 
+ function add (x,y){
+    return x+y;
+ }
 
 /**
  * Subtracts the second number from the first.
@@ -33,7 +49,9 @@
  * @param {number} y
  * @return {number} the difference
  */
-
+ function subtract (x,y){
+    return x-y;
+ }
 
 /**
  * Multiplies two numbers.
@@ -41,7 +59,9 @@
  * @param {number} y
  * @return {number} the product
  */
-
+function multiply (x,y){
+    return x*y;
+ }
 
 /**
  * Divides the first number by the second.
@@ -49,14 +69,18 @@
  * @param {number} y
  * @return {number} the quotient
  */
-
+function divide (x,y){
+    return x/y;
+}
 
 /**
  * Multiplies a number by itself.
  * @param {number} x, number to be squared
  * @return {number} squared
  */
-
+function square (number){
+    return number*number;
+}
 
 /**
  * Performs a mathematical operation on two numbers.
@@ -67,6 +91,22 @@
  * @return {number} the result
  */
 
+function calculate (operator,x,y){
+    if(operator==="add"){
+        console.log(x + " + " + y + " = " + (x + y));
+        return x + y; 
+    }else if(operator==="subtract"){
+        console.log(x + " - " + y + " = " + (x - y));
+        return x - y;
+    }else if(operator==="multiply"){
+        console.log(x + " * " + y + " = " + (x * y));
+        return x * y;
+    }else if(operator==="divide"){
+        console.log(x + " / " + y + " = " + (x / y));
+        return x / y;
+    }
+}
+
 
 /**
  * Returns true if `a` is greater than `b`.
@@ -74,7 +114,13 @@
  * @param {number} b
  * @return {boolean} `a` is larger than `b`
  */
-
+function isGreaterThan (a,b){
+    if(a>b){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 /**
  * Returns true if `a` is less than `b`.
@@ -82,7 +128,13 @@
  * @param {number} b
  * @return {boolean} `a` is smaller than `b`
  */
-
+function isLessThan (a,b){
+    if(a<b){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -90,6 +142,13 @@
  * @param {number} b
  * @return {boolean} the numbers are equal
  */
+function areEqual (a,b){
+    if(a===b){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 
 /**
@@ -99,6 +158,13 @@
  * @return {number} the smallest number
  */
 
+function minimum(x,y){
+    if(x>y){
+        return y;
+    }else{
+        return x;
+    }
+}
 
 /**
  * Returns the largest value of two numbers.
@@ -107,6 +173,13 @@
  * @return {number} the largest number
  */
 
+function maximum(x,y){
+    if(x>y){
+        return x;
+    }else{
+        return y;
+    }
+}
 
 /**
  * Returns true if `n` is even.
@@ -114,6 +187,13 @@
  * @return {boolean} the number is even
  */
 
+function isEven(number){
+    if(number%2===0){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 /**
  * Returns true if `n` is odd.
@@ -121,6 +201,13 @@
  * @return {boolean} the number is odd
  */
 
+function isOdd(number){
+    if(number%2!==0){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 /**
  * Returns a letter grade.
@@ -133,7 +220,19 @@
  * @param {number} total maximum possible score
  * @return {string} the score represented as a letter grade
  */
-
+function letterGrade(number){
+    if(number>89){
+        return "A";
+    }else if(number>80&&number<89){
+        return "B";
+    }else if(number>70&&number<79){
+        return "C";
+    }else if(number>60&&number<69){
+        return "D";
+    }else if(number>0&&number<59){
+        return "F";
+    }
+}
 
 /**
  * Checks if a `restaurant` object has a `reviews` property.
@@ -142,7 +241,15 @@
  * @param {object} restaurant   represents a restaurant object
  * @return {object} restaurant
  */
-
+  
+function incrementReviews(restaurant){
+    if(restaurant.reviews===undefined){
+        restaurant.reviews = 1;
+    }else{
+        restaurant.reviews = restaurant.reviews+1;
+    }
+    return restaurant;
+}
 
 /**
  * Joins two strings with a space.
@@ -150,7 +257,9 @@
  * @param {string} word2
  * @return {string} joined the words joined with a space
  */
-
+function combine(word1,word2){
+    return word1 + " " + word2;
+}
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.
@@ -159,4 +268,8 @@
  * @param {number} radius
  * @return {object} circle
  */
-
+ 
+function createCircle(number){
+        var circle = number*Math.PI;
+        return circle;
+    }
